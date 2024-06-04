@@ -156,7 +156,7 @@ def main():
             text = convert_breathing(text)
             text = final_sigma(text)
             converted_text = convert_to_greek(text)
-            st.text_area("Converted Text", converted_text)
+            st.text_area("Converted Text (Unicode)", converted_text)
         if converter_choice == "Ugaritic":
             converted_text1, converted_text2 = convert_to_ugaritic(text, ugaritic_conversion_list)
             st.text_area("Converted Text 1", converted_text1)
