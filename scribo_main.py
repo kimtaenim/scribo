@@ -165,7 +165,8 @@ def main():
             converted_text = convert_to_latin(text)
             st.text_area("Converted Text", converted_text)
 
-    link = st.link_button("김태의 古典페이지", url="https://kimtaeclassics.oopy.io/")
+    link = st.link_button("김태의 古典페이지", url="https://kimtaeclassics.oopy.io/",
+                         use_container_width=True)
 
 if __name__ == "__main__":
     main()
