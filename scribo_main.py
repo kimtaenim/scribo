@@ -146,8 +146,8 @@ def main():
     st.title("scribo 0.01")
 
     text = st.text_area("Enter Roman Alphabet *(Kim Tae, 2024)*")
-    converter_choice = st.radio("Choose your converter", ("Classical Greek", "Ugaritic", "Latin"))
     try_this()
+    converter_choice = st.radio("Choose your converter", ("Classical Greek", "Ugaritic", "Latin"))
 
     if st.button("Convert"):
         if converter_choice == "Classical Greek":
@@ -165,6 +165,7 @@ def main():
             converted_text = convert_to_latin(text)
             st.text_area("Converted Text", converted_text)
 
+    link = st.link_button("김태의 古典페이지", url="https://kimtaeclassics.oopy.io/")
 
 if __name__ == "__main__":
     main()
