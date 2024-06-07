@@ -111,13 +111,26 @@ def convert_to_greek(text):
     return text
 
 # Ugaritic
+
 def convert_to_ugaritic(text, conversion_list):
+    output1 = ""
+    output2 = ""
+    i = 0
+    
+    # 첫 번째 변환
+    transformed1 = text
     for pattern, ugaritic1, ugaritic2 in conversion_list:
-        text = re.sub(re.escape(pattern), ugaritic1, text)
-    output1 = text
+        escaped_pattern = re.escape(pattern)
+        transformed1 = re.sub(escaped_pattern, ugaritic1, transformed1)
+
+    # 두 번째 변환
+    transformed2 = text
     for pattern, ugaritic1, ugaritic2 in conversion_list:
-        text = re.sub(re.escape(pattern), ugaritic2, text)
-    output2 = text
+        escaped_pattern = re.escape(pattern)
+        transformed2 = re.sub(escaped_pattern, ugaritic2, transformed2)
+    
+    output1 = transformed1
+    output2 = transformed2
 
     return output1, output2
 
