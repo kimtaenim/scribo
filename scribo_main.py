@@ -112,6 +112,17 @@ def convert_to_greek(text):
 
 # Ugaritic
 def convert_to_ugaritic(text, conversion_list):
+    for pattern, ugaritic1, ugaritic2 in conversion_list:
+        text = re.sub(re.escape(pattern), ugaritic1, text)
+    output1 = text
+    for pattern, ugaritic1, ugaritic2 in conversion_list:
+        text = re.sub(re.escape(pattern), ugaritic2, text)
+    output2 = text
+
+    return output1, output2
+
+'''
+def convert_to_ugaritic(text, conversion_list):
     output1 = ""
     output2 = ""
     i = 0
@@ -129,6 +140,7 @@ def convert_to_ugaritic(text, conversion_list):
             output2 += text[i]
             i += 1
     return output1, output2
+'''
 
 # Latin
 def convert_to_latin(text):
