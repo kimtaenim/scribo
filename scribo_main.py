@@ -121,27 +121,6 @@ def convert_to_ugaritic(text, conversion_list):
 
     return output1, output2
 
-'''
-def convert_to_ugaritic(text, conversion_list):
-    output1 = ""
-    output2 = ""
-    i = 0
-    while i < len(text):
-        replaced = False
-        for conversion in conversion_list:
-            if text[i:i+len(conversion[0])] == conversion[0]:
-                output1 += conversion[1]
-                output2 += conversion[2]
-                i += len(conversion[0])
-                replaced = True
-                break
-        if not replaced:
-            output1 += text[i]
-            output2 += text[i]
-            i += 1
-    return output1, output2
-'''
-
 # Latin
 def convert_to_latin(text):
     for key, value in latin_dict.items():
